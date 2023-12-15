@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"  rel="stylesheet"/>
+    <title>MARVEL</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+        :root{
+            --primary-color: #0a0d14;
+            --primary-color-light: #20242f;
+            --secondary-color: #f49e09;
+            --extra-light: rgba(255, 255, 255, 0.5);
+            --white: white;
+            --max-width: 1200px;
+            --header-font: "Lisu Bosa", serif;
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Home-CSS */
+
+        .section_container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 5rem 1rem;
+        }  
+
+        .section_header{
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: var(--header-font);
+            text-align: center;
+        }
+
+        .section_subheader{
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .btn{
+            padding: 0.75rem 1.5rem;
+            outline: none;
+            border: none;
+            font-size: 1rem;
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            cursor: pointer;
+        }
+
+        img{
+            width: 100%;
+            display: flex;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        html,body{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            font-family: "Poppins", sans-serif;
+            color: var(--white);
+            background-color: var(--primary-color);
+        }
+
+        header{
+            background-image: linear-gradient(to top, var(--primary-color),transparent),url("images1/header.jpg");
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid var(--extra-light);
+        }
+
+        .nav_bar {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav_logo a {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .nav_links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .link a {
+            padding: 1.5rem 5px;
+            font-weight: 500;
+            color: var(--white);
+            transition: 0.3s;
+        }
+
+        .link a:hover {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .link span {
+            padding: 1rem 0;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .header_container {
+            padding: 12rem 1rem;
+        }
+
+        .header_container h1 {
+            margin-bottom: 1rem;
+            max-width: 700px;
+            font-size: 4rem;
+            font-family: var(--header-font);
+        }
+
+        .header_container h4 {
+            position: relative;
+            margin-left: 3rem;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .header_container h4::after {
+            position: absolute;
+            content: "";
+            left: -3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 2px;
+            width: 2rem;
+            background-color: var(--white);
+        }
+
+        /* About-CSS */
+
+        .about_container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about_container :is(.section_header, .section_subheader) {
+            text-align: left;
+        }
+
+        .about_flex {
+            margin: 2rem 0;
+            padding: 2rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background-color: var(--primary-color-light);
+        }
+
+        .about_card {
+            flex: 1 1 150px;
+            text-align: center;
+            border-right: 2px solid var(--primary-color);
+        }
+
+        .about_card:last-child {
+            border: none;
+        }
+
+        .about_card h4 {
+            margin-bottom: 5px;
+            font-size: 3rem;
+            font-weight: 600;
+            font-family: var(--header-font);
+        }
+
+        .about_card p {
+            font-size: 0.9rem;
+        }
+
+        .about_image img {
+            max-width: 450px;
+            margin: auto;
+        }
+
+        /* Engaged-Place-CSS */
+
+        .discover {
+            background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.05),transparent);
+        }
+
+        .discover_grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .discover_card {
+            max-width: 320px;
+            margin: auto;
+        }
+
+        .discover_card:nth-child(2) {
+            transform: translateY(5rem);
+        }
+
+        .discover_image {
+            position: relative;
+        }
+
+        .discover_image::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 50%;
+            left: 0;
+            bottom: 0;
+            background-image: linear-gradient(to top, var(--primary-color), transparent);
+        }
+
+        .discover_card_content {
+            padding: 0 2rem;
+            transform: translateY(-50%);
+        }
+
+        .discover_card_content h4 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: var(--header-font);
+            color: var(--secondary-color);
+        }
+
+        .discover_card_content p {
+            margin-bottom: 2rem;
+        }
+
+        .discover_btn {
+            padding: 0.75rem 1rem;
+            outline: none;
+            font-size: 1rem;
+            color: var(--white);
+            background-color: transparent;
+            border: 1px solid var(--white);
+            cursor: pointer;
+        }
+
+        /* Blog-CSS */
+
+        .blogs_container {
+            padding: 5rem 0;
+        }
+
+        .blogs_grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .blogs_card {
+            position: relative;
+        }
+
+        .blogs_card::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-image: linear-gradient(to top, var(--primary-color), transparent);
+        }
+
+        .blogs_content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        /* Trip-Detail-CSS */
+
+        .journals_grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .journals_content {
+            padding: 2rem;
+            background-color: var(--primary-color-light);
+        }
+
+        .journals_author {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .journals_author img {
+            max-width: 30px;
+            border-radius: 100%;
+        }
+
+        .journals_author p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        .journals_content h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .journals_footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .journals_footer p {
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+
+        journals_footer span a {
+            font-size: 1.5rem;
+            color: var(--white);
+            opacity: 0.75;
+        }
+
+        .journals_btn {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        /* Banner-CSS */
+
+        .hero_container p {
+            text-align: center;
+            font-size: 12rem;
+            font-weight: 700;
+            background-image: url("images1/marvel.jpg");
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px var(--extra-light);
+        }
+
+        /* Gallery-CSS */
+
+        .gallery_container {
+            padding: 5rem 1rem;
+        }
+
+        .gallery_grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery_card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery_content {
+            position: absolute;
+            left: 50%;
+            bottom: -8rem;
+            transform: translateX(-50%);
+            width: 100%;
+            padding: 2rem 1rem;
+            transition: 0.3s;
+            text-align: center;
+            background-image: linear-gradient(to top, var(--primary-color), transparent);
+        }
+
+        .gallery_content h4 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: var(--header-font);
+        }
+
+        .gallery_card:hover .gallery_content {
+            bottom: 0;
+        }
+
+        /* Contact-CSS */
+
+        .contact {
+            background-image: linear-gradient(to top,rgba(255, 255, 255, 0.05),transparent);
+        }
+
+        .contact_container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact_card {
+            max-width: 250px;
+            margin: auto;
+            aspect-ratio: 1;
+            display: grid;
+            place-content: center;
+            text-align: center;
+            border: 1px solid var(--extra-light);
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        .contact_card span {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            transition: 0.3s;
+        }
+
+        .contact_card:hover span {
+            color: var(--secondary-color);
+        }
+
+        .contact_col h4 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: var(--header-font);
+        }
+
+        .contact_col h5 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: var(--header-font);
+        }
+
+        /* Footer-CSS */
+
+        .footer_container {
+            text-align: center;
+        }
+
+        .footer_container h4 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer_socials {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .footer_socials span a {
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer_socials span a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer_container p {
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 4rem;
+        }
+
+        .footer_nav {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer_link a {
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .footer_link a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer_bar {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 1px solid var(--extra-light);
+        }
+
+        /* Media-Size BreakPoint */
+
+        @media (width < 900px) {
+            .link:not(.search) {
+                display: none;
+            }
+
+            .about_container {
+                grid-template-columns: repeat(1, 1fr);
+                text-align: center;
+            }
+
+            .about_container :is(.section_header, .section_subheader) {
+                text-align: center;
+            }
+
+            .about_image {
+                grid-area: 1/1/2/2;
+            }
+
+            .discover_grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blogs_grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .journals_grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .hero_container p {
+                font-size: 10rem;
+            }
+
+            .gallery_grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact_container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact_col:first-child {
+                grid-area: 1/1/2/3;
+                text-align: center;
+            }
+          }
+
+            @media (width < 600px) {
+            .header_container {
+                text-align: center;
+            }
+
+            .header_container h4 {
+                margin-left: 0;
+            }
+
+            .about_card {
+                border: none;
+            }
+
+            .discover_grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .discover_card:nth-child(2) {
+                transform: translateY(0);
+            }
+
+            .blogs_grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .journals_grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .hero_container p {
+                font-size: 6rem;
+            }
+
+            .gallery_grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact_container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .contact_col:first-child {
+                grid-area: unset;
+            }
+          }
+    </style>
+</head>
+<body>
+
+  <!-- Home-Page-Desgin -->
+
+    <header id="home">
+      <nav>
+        <div class="nav_bar">
+          <div class="nav_logo"><a href="#">MARVEL</a></div>
+          <ul class="nav_links">
+            <li class="link"><a href="#home">Home</a></li>
+            <li class="link"><a href="#about">About Us</a></li>
+            <li class="link"><a href="#discover">Discover</a></li>
+            <li class="link"><a href="#blog">Blog</a></li>
+            <li class="link"><a href="#journals">Journals</a></li>
+            <li class="link"><a href="#gallery">Gallery</a></li>
+            <li class="link"><a href="#contact">Contact</a></li>
+            <li class="link search">
+              <span><i class="ri-search-line"></i></span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="section_container header_container">
+        <h1>The new way to plan your next adventure</h1>
+        <h4>Explore the colourful world</h4>
+        <button class="btn">
+          Explore More <i class="ri-arrow-right-line"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- About-Desgin -->
+
+    <section class="about" id="about">
+      <div class="section_container about_container">
+        <div class="about_content">
+          <h2 class="section_header">About us</h2>
+          <p class="section_subheader">
+            Our mission is to ignite the spirit of discovery in every traveler's
+            heart, offering meticulously crafted itineraries that blend
+            adrenaline-pumping activities with awe-inspiring landscapes. With a
+            team of seasoned globetrotters, we ensure that every expedition is
+            infused with excitement, grace our planet. Embark on a voyage of a
+            lifetime with us, as we redefine the art of exploration.
+          </p>
+          <div class="about_flex">
+            <div class="about_card">
+              <h4>268</h4>
+              <p>Completed Trips</p>
+            </div>
+            <div class="about_card">
+              <h4>176</h4>
+              <p>Tour Guides</p>
+            </div>
+            <div class="about_card">
+              <h4>153</h4>
+              <p>Destinations</p>
+            </div>
+          </div>
+          <button class="btn">
+            Read More <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+        <div class="about_image">
+          <img src="images1/about.jpg" alt="about" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Engaged-places-Desgin -->
+
+    <section class="discover" id="discover">
+      <div class="section_container discover_container">
+        <h2 class="section_header">Discover the most engaging places</h2>
+        <p class="section_subheader">
+          Let's see the world with us with you and your family.
+        </p>
+        <div class="discover_grid">
+          <div class="discover_card">
+            <div class="discover_image">
+              <img src="images1/discover-1.jpg" alt="discover" />
+            </div>
+            <div class="discover_card_content">
+              <h4>Norway</h4>
+              <p>
+                Discover the untamed beauty of Norway, a land where rugged
+                mountains, and enchanting northern lights paint a surreal
+                backdrop.
+              </p>
+              <button class="discover_btn">
+                Discover More <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+          <div class="discover_card">
+            <div class="discover_image">
+              <img src="images1/discover-2.jpg" alt="discover" />
+            </div>
+            <div class="discover_card_content">
+              <h4>London</h4>
+              <p>
+                From urban rock climbing to twilight cycling through royal
+                parks, London beckons adventure enthusiasts to embrace
+                opportunities.
+              </p>
+              <button class="discover_btn">
+                Discover More <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+          <div class="discover_card">
+            <div class="discover_image">
+              <img src="images1/discover-3.jpg" alt="discover" />
+            </div>
+            <div class="discover_card_content">
+              <h4>Japan</h4>
+              <p>
+                From scaling the iconic peaks of Mount Fuji to immersing in the
+                serenity, Japan offers adventurers a captivating cultural
+                treasures.
+              </p>
+              <button class="discover_btn">
+                Discover More <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog-Desgin -->
+
+    <section class="blogs" id="blog">
+      <div class="blogs_container">
+        <h2 class="section_header">Latest on the blogs</h2>
+        <p class="section_subheader">We want to help youto travel better!</p>
+        <div class="blogs_grid">
+          <div class="blogs_card">
+            <img src="images1/blog-1.jpg" alt="blog" />
+            <div class="blogs_content">
+              10 mistakes every first time traveller will make and how to avoid
+              them!
+            </div>
+          </div>
+          <div class="blogs_card">
+            <img src="images1/blog-2.jpg" alt="blog" />
+            <div class="blogs_content">
+              What's it really like to move to a country where you don't speak
+              the language?
+            </div>
+          </div>
+          <div class="blogs_card">
+            <img src="images1/blog-3.jpg" alt="blog" />
+            <div class="blogs_content">
+              Exploring the quite corners of Oslo | Gallop around the globe.
+            </div>
+          </div>
+          <div class="blogs_card">
+            <img src="images1/blog-4.jpg" alt="blog" />
+            <div class="blogs_content">
+              11 things to know before you visit rainbow mountain in Peru.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Trip-Record-Desgin -->
+
+    <section class="journals" id="journals">
+      <div class="section_container journals_container">
+        <h2 class="section_header">The Travel Journals</h2>
+        <p class="section_subheader">
+          A journal is a place to record new things you have discovered while
+          exploring various places you visit.
+        </p>
+        <div class="journals_grid">
+          <div class="journals_card">
+            <img src="images1/journals-1.jpg" alt="journal" />
+            <div class="journals_content">
+              <div class="journals_author">
+                <img src="images1/author-1.jpg" alt="author" />
+                <p>By Marry Ann</p>
+              </div>
+              <h4>How to use less plastic when you travel.</h4>
+              <div class="journals_footer">
+                <p>18 Apr 2022</p>
+                <span>
+                  <a href="#"><i class="ri-share-fill"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="journals_card">
+            <img src="images1/journals-2.jpg" alt="journal" />
+            <div class="journals_content">
+              <div class="journals_author">
+                <img src="images1/author-2.jpg" alt="author" />
+                <p>By Austin Martin</p>
+              </div>
+              <h4>The best weekend road trips from Denver.</h4>
+              <div class="journals_footer">
+                <p>22 Jun 2022</p>
+                <span>
+                  <a href="#"><i class="ri-share-fill"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="journals_card">
+            <img src="images1/journals-3.jpg" alt="journal" />
+            <div class="journals_content">
+              <div class="journals_author">
+                <img src="images1/author-3.jpg" alt="author" />
+                <p>By Anina Joseph</p>
+              </div>
+              <h4>Tips and tricks to plan your next adventure.</h4>
+              <div class="journals_footer">
+                <p>05 Sep 2022</p>
+                <span>
+                  <a href="#"><i class="ri-share-fill"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="journals_card">
+            <img src="images1/journals-4.jpg" alt="journal" />
+            <div class="journals_content">
+              <div class="journals_author">
+                <img src="images1/author-4.jpg" alt="author" />
+                <p>By Jacob Fernandez</p>
+              </div>
+              <h4>A beginner's guide to hostel's.</h4>
+              <div class="journals_footer">
+                <p>14 Dec 2022</p>
+                <span>
+                  <a href="#"><i class="ri-share-fill"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="journals_card">
+            <img src="images1/journals-5.jpg" alt="journal" />
+            <div class="journals_content">
+              <div class="journals_author">
+                <img src="images1/author-5.jpg" alt="author" />
+                <p>By John Smith</p>
+              </div>
+              <h4>17 unconventional travel hacks you need.</h4>
+              <div class="journals_footer">
+                <p>10 Feb 2022</p>
+                <span>
+                  <a href="#"><i class="ri-share-fill"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="journals_card">
+            <img src="images1/journals-6.jpg" alt="journal" />
+            <div class="journals_content">
+              <div class="journals_author">
+                <img src="images1/author-6.jpg" alt="author" />
+                <p>By Aaran Kennedy</p>
+              </div>
+              <h4>Travel tip's you'll wish you'd known sooner.</h4>
+              <div class="journals_footer">
+                <p>20 Mar 2023</p>
+                <span>
+                  <a href="#"><i class="ri-share-fill"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="journals_btn">
+          <button class="btn">
+            View All Journals <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner-Desgin -->
+
+    <section class="hero">
+      <div class="section_container hero_container">
+        <p> MARVEL</p>
+      </div>
+    </section>
+
+    <!-- Gallery-Desgin -->
+
+    <section class="gallery" id="gallery">
+      <div class="gallery_container">
+        <h2 class="section_header">Gallery photos</h2>
+        <p class="section_subheader">
+          Explore the most beautiful places in the world.
+        </p>
+        <div class="gallery_grid">
+          <div class="gallery_card">
+            <img src="images1/gallery-1.jpg" alt="gallery" />
+            <div class="gallery_content">
+              <h4>Northern Lights</h4>
+              <p>Norway</p>
+            </div>
+          </div>
+          <div class="gallery_card">
+            <img src="images1/gallery-2.jpg" alt="gallery" />
+            <div class="gallery_content">
+              <h4>Krabi</h4>
+              <p>Thailand</p>
+            </div>
+          </div>
+          <div class="gallery_card">
+            <img src="images1/gallery-3.jpg" alt="gallery" />
+            <div class="gallery_content">
+              <h4>Bali</h4>
+              <p>Indonesia</p>
+            </div>
+          </div>
+          <div class="gallery_card">
+            <img src="images1/gallery-4.jpg" alt="gallery" />
+            <div class="gallery_content">
+              <h4>Tokyo</h4>
+              <p>Japan</p>
+            </div>
+          </div>
+          <div class="gallery_card">
+            <img src="images1/gallery-5.jpg" alt="gallery" />
+            <div class="gallery_content">
+              <h4>Taj Mahal</h4>
+              <p>India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact-Design -->
+
+    <section class="contact" id="contact">
+      <div class="section_container contact_container">
+        <div class="contact_col">
+          <h4>Contact a travel researcher</h4>
+          <p>We always aim to reply within 24 hours.</p>
+        </div>
+        <div class="contact_col">
+          <div class="contact_card">
+            <span><i class="ri-phone-line"></i></span>
+            <h4>Call us</h4>
+            <h5>+91 9876543210</h5>
+            <p>We are online now</p>
+          </div>
+        </div>
+        <div class="contact_col">
+          <div class="contact_card">
+            <span><i class="ri-mail-line"></i></span>
+            <h4>Send us an enquiry</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-Desgin -->
+
+    <section class="footer">
+      <div class="section_container footer_container">
+        <h4>MARVEL</h4>
+        <div class="footer_socials">
+          <span>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </span>
+        </div>
+        <p>
+          Cheap Romantic Vacations. Many people feel that there is a limited
+          amount of abundance, wealth, or chance to succeed in life.
+        </p>
+        <ul class="footer_nav">
+          <li class="footer_link"><a href="#home">Home</a></li>
+          <li class="footer_link"><a href="#about">About</a></li>
+          <li class="footer_link"><a href="#discover">Discover</a></li>
+          <li class="footer_link"><a href="#blog">Blog</a></li>
+          <li class="footer_link"><a href="#journals">Journals</a></li>
+          <li class="footer_link"><a href="#gallery">Gallery</a></li>
+          <li class="footer_link"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer_bar">
+        Copyright © Siranjeevi || All rights reserved.
+      </div>
+    </section>
+  </body>
+</html>
